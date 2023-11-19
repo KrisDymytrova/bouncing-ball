@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball</title>
+
+    <style>
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: #e2cba1 linear-gradient(to bottom, #f2f6f8 0%, #d8e1e7 45%, #b5c6d0 46%, #e0eff9 70%, #ffffff 100%) no-repeat fixed;
+        }
+
+        .container {
+            position: absolute;
+            height: 800px;
+            width: 1000px;
+        }
+
+        .ball {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background: url(https://derelik.club/uploads/posts/2023-08/thumbs/1691077401_drikus-club-p-goluboi-fon-abstraktsiya-pinterest-29.jpg);
+            border-radius: 50%;
+
+            animation: jumpIt 2s linear both alternate,
+            moveIt 6s linear both,
+            rotateBackground 15s linear infinite;
+        }
+
+        .shadow {
+            position: absolute;
+            margin-top: 514px;
+            height: 100px;
+            width: 100px;
+            background-color: rgba(0,0,0,0.6);
+            filter: blur(8px);
+            border-radius: 50px;
+            animation: scaleIt 2s linear both alternate,
+            moveIt 6s linear both;
+        }
+
+        @keyframes jumpIt {
+
+            0% {
+                transform: translateY(0px);
+                height: 100px;
+                width: 100px;
+            }
+
+            15% {
+                height: 85px;
+                width: 105px;
+            }
+
+            30% {
+                transform: translate(100px, 500px);
+                height: 55px;
+                width: 110px;
+            }
+
+            45% {
+                transform: translate(200px, 150px);
+                height: 100px;
+                width: 100px;
+            }
+
+            60% {
+                height: 85px;
+                width: 105px;
+            }
+
+            75% {
+                transform: translate(300px, 500px);
+                height: 55px;
+                width: 110px;
+            }
+
+            85% {
+                transform: translate(400px, 250px);
+                height: 100px;
+                width: 100px;
+            }
+
+            90% {
+                height: 85px;
+                width: 105px;
+            }
+
+            95% {
+                transform: translate(500px, 500px);
+                height: 55px;
+                width: 110px;
+            }
+
+            100% {
+                transform: translate(501px, 455px);
+                height: 100px;
+                width: 100px;
+            }
+    }
+
+    @keyframes moveIt {
+        0% {left: 0;}
+        100% {left: 100%;}
+    }
+
+    @keyframes scaleIt {
+        0% {transform: scale(0.4, 0.1); opacity: 0.3;}
+        30% {transform: translateX(100px) scale(1, 0.2);}
+        45% {transform: translateX(200px) scale(0.4, 0.1); opacity: 0.3;}
+        75% {transform: translateX(300px) scale(1, 0.2);}
+        85% {transform: translateX(400px) scale(0.4, 0.1); opacity: 0.3;}
+        95% {transform: translateX(500px) scale(1, 0.2);}
+        100% {transform: translateX(501px) scale(1, 0.2);}
+    }
+
+    @keyframes rotateBackground {
+        0% {background-position: 0 0;}
+        100% {background-position: 100% 100%;}
+    }
+
+</style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="ball"></div>
+        <div class="shadow"></div>
+    </div>
+</body>
+</html>
